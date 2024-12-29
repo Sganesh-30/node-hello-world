@@ -21,7 +21,6 @@ pipeline {
                 sh 'npm install'
                 sh 'npm fund'
                 sh 'npm install --save-dev mocha'
-                sh 'ls node_modules/.bin/ | grep mocha'
             }
         }   
         stage ('Run Unit Test') {
