@@ -3,7 +3,13 @@ pipeline {
 
     tools {
         nodejs 'NodeJS-234'
+        SonarQube 'SonarQube-620'
     }
+
+    environment {
+        SONARQUBE_ENV = 'SonarQube'
+    }
+
     stages {
         stage ('Checkout') {
             steps {
@@ -24,6 +30,11 @@ pipeline {
         stage ('Run Unit Test') {
             steps {
                 sh 'npx mocha test/**/*.js'
+            }
+        }
+        stage ('Code Coverage') {
+            steps {
+                sh 'npm run coverage'
             }
         }
     }
