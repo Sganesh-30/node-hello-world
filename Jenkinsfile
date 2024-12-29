@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh 'npm install'
                 sh 'npm install --save-dev mocha'
-            }
+                sh 'ls node_modules/.bin/ | grep mocha'
         }
         stage ('Run Unit Test') {
             steps {
