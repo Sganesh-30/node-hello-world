@@ -10,7 +10,7 @@ pipeline {
                 checkout scm
             }
         }
-        stage ('Print Node Js Version') {
+        stage ('Print NodeJs and NPM Version') {
             steps {
                 sh 'node -v'
             }
