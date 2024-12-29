@@ -19,6 +19,7 @@ pipeline {
         stage ('Installing Dependencies') {
             steps {
                 sh 'npm install'
+                sh 'npm fund'
                 sh 'npm install --save-dev mocha'
                 sh 'ls node_modules/.bin/ | grep mocha'
         }
