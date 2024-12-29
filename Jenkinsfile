@@ -26,6 +26,7 @@ pipeline {
         stage ('Run Unit Test') {
             steps {
                 sh 'npx mocha test/**/*.js'
+                sh 'npx nyc npm test'
             }
         }
         stage ('Code Coverage') {
