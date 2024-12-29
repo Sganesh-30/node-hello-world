@@ -3,11 +3,6 @@ pipeline {
 
     tools {
         nodejs 'NodeJS-234'
-        SonarQube 'SonarQube-620'
-    }
-
-    environment {
-        SONARQUBE_ENV = 'SonarQube'
     }
 
     stages {
