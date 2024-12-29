@@ -13,6 +13,7 @@ pipeline {
         stage ('Print NodeJs and NPM Version') {
             steps {
                 sh 'node -v'
+                sh 'npm -v'
             }
         }
         stage ('Installing Dependencies') {
