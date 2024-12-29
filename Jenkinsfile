@@ -23,7 +23,7 @@ pipeline {
         }   
         stage ('Run Unit Test') {
             steps {
-                sh 'npm test'
+                sh 'npx mocha test/**/*.js'
             }
         }
     }
