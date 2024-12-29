@@ -5,10 +5,10 @@ pipeline {
             steps {
                 checkout scm
             }
-        }   
-        stage ('Print Node Version') {
+        }
+        stage ('Print Node Js Version') {
             steps {
-                sh node -v
+                sh 'node -v'
             }
         }
     }
