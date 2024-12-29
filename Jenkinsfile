@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'Nodejs-234'
+        nodejs 'NodeJS-234'
     }
     stages {
         stage ('Checkout') {
