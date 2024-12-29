@@ -26,6 +26,7 @@ pipeline {
         stage ('Run Unit Test') {
             steps {
                 sh 'npx mocha test/sample.test.js'
+                sh 'npm test'
             }
         }
     }
