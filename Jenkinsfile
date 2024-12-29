@@ -20,6 +20,7 @@ pipeline {
         stage ('Installing Dependencies') {
             steps {
                 sh 'npm install'
+                sh 'npm install --save-dev mocha'
                 sh 'npm install --save-dev nyc'
             }
         }   
@@ -33,6 +34,6 @@ pipeline {
             steps {
                 sh 'npm run coverage'
             }
-        }
+        } 
     }
 }
