@@ -37,11 +37,15 @@ pipeline {
         }
         stage ('SonarQube Code Analysis') {
             steps {
+                withSonarQubeEnv(credentialsId: 'SonarQube') {
+                sh '''    
                 sonar-scanner \
                  -Dsonar.projectKey=node-hello-world \
                  -Dsonar.sources=. \
                  -Dsonar.host.url=http://3.85.37.125:9000 \
                  -Dsonar.token=sqp_6609aebd7cb0c59de63889cb68d233a0d8fcb9f5
+                '''
+                }
             }
         }
     }
