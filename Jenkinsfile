@@ -37,8 +37,8 @@ pipeline {
         }
         stage ('SonarQube Code Analysis') {
             steps {
-                withSonarQubeEnv(credentialsId: 'SonarQube') {
-                    withCredentials([string(credentialsId: 'SonarQube', variable: 'SONAR_TOKEN')]) {
+                withSonarQubeEnv('SonarQube') {
+                    withCredentials([string(credentialsId: 'SonarQube', variable: 'SonarQube-Token')]) {
                         sh '''    
                             sonar-scanner \
                             -Dsonar.projectKey=node-hello-world \
