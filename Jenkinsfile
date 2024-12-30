@@ -3,7 +3,6 @@ pipeline {
 
     tools {
         nodejs 'NodeJS-234'
-        SonarQubeScanner 'SonarQube-620'
     }
 
     stages {
@@ -39,7 +38,7 @@ pipeline {
         stage ('SonarQube Code Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    withCredentials([string(credentialsId: 'SonarQube', variable: 'SonarQube-Token')]) {
+                    withCredentials([string(credentialsId: 'SonarQube-620', variable: 'SoanrQube-Token')]) {
                         sh '''    
                             sonar-scanner \
                             -Dsonar.projectKey=node-hello-world \
@@ -54,3 +53,5 @@ pipeline {
         }
     }
 }
+
+
