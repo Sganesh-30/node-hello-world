@@ -3,6 +3,7 @@ pipeline {
 
     tools {
         nodejs 'NodeJS-234'
+        SonarQubeScanner 'SonarQube-620'
     }
 
     stages {
